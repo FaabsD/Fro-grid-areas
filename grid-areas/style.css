@@ -1,0 +1,212 @@
+/* Stijl algemeen */
+html,
+body,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+header,
+aside {
+    background-color: rgb(149, 255, 255);
+    padding: 2rem;
+}
+
+section {
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-bottom: .2em;
+}
+
+.number {
+    background-color: #000080;
+    color: #ffffff;
+    font-size: 3em;
+    width: 1.2em;
+    text-align: right;
+    padding: .2em;
+}
+
+article {
+    padding: 1em;
+    font-size: 1rem;
+}
+
+.img1 {
+    width: 100%;
+    object-fit: cover;
+
+}
+.img2{
+    display: none;
+}
+aside {
+    font-size: 1.5rem;
+    padding: 1em;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside a {
+    color: #000000;
+    padding: 1em;
+    display: block;
+    text-decoration: none;
+}
+
+aside a:hover {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+footer {
+    color: #ffffff;
+    background-color: #3d3d3d;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+}
+
+footer a {
+    color: rgb(100, 215, 200);
+}
+
+/* Stijl 2 koloms layout */
+@media screen and (min-width: 760px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "kop kop"
+            "t1-buiten t2-sportief"
+            "t3-films t4-leedvermaak"
+            "t5-humor t6-boek"
+            "t7-contact img"
+            "t8-opruimen aside"
+            "t9-aanbieding aside"
+            "t10-slot aside"
+            "footer footer"
+
+        ;
+    }
+
+    header {
+        grid-area: kop;
+    }
+
+    .buiten {
+        grid-area: t1-buiten;
+    }
+
+    .sportief {
+        grid-area: t2-sportief;
+    }
+
+    .films {
+        grid-area: t3-films;
+    }
+
+    .leedvermaak {
+        grid-area: t4-leedvermaak;
+    }
+
+    .humor {
+        grid-area: t5-humor;
+    }
+
+    .boek {
+        grid-area: t6-boek;
+    }
+
+    .contact {
+        grid-area: t7-contact;
+    }
+
+    .img1 {
+        grid-area: img;
+        width: 100%;
+    }
+
+    .opruimen {
+        grid-area: t8-opruimen;
+    }
+
+    .aanbieding {
+        grid-area: t9-aanbieding;
+    }
+
+    .slot {
+        grid-area: t10-slot;
+    }
+
+    aside {
+        grid-area: aside;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
+
+/* Stijl 3 koloms layout */
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "kop kop kop"
+            "t1-buiten t2-sportief aside"
+            "t3-films t4-leedvermaak aside"
+            "t5-humor t6-boek aside"
+            "t7-contact img aside"
+            "t8-opruimen t9-aanbieding aside"
+            "t10-slot t10-slot aside"
+            "footer footer footer"
+        ;
+    }
+
+    aside {
+        background-color: lightgray;
+    }
+
+    aside a:hover {
+        color: #000000;
+        background-color: unset;
+        text-decoration: underline;
+    }
+}
+
+/* Stijl 5 koloms layout */
+@media screen and (min-width: 1200px) {
+    body {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "kop kop kop kop kop"
+            "t1-buiten t2-sportief t2-sportief t3-films t3-films"
+            "t1-buiten t4-leedvermaak t4-leedvermaak t5-humor t5-humor"
+            "t6-boek t6-boek t7-contact img aside"
+            "t8-opruimen t8-opruimen t9-aanbieding t9-aanbieding aside"
+            "t10-slot t10-slot img2 img2 aside"
+            "footer footer footer footer footer"
+        ;
+    }
+    .img2{
+        display: unset;
+        width: 100%;
+        grid-area: img2;
+        object-fit: cover;
+    }
+}
